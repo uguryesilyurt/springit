@@ -11,7 +11,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 
 @SpringBootApplication
-@EnableJpaAuditing
 public class SpringItApplication {
 
     private static final Logger log = LoggerFactory.getLogger(SpringItApplication.class);
@@ -19,22 +18,6 @@ public class SpringItApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringItApplication.class, args);
     }
-
-    /*@Bean
-    CommandLineRunner runner(LinkRepository linkRepository, CommentRepository commentRepository) {
-        return args -> {
-            Link link = new Link("Getting Started with Spring Boot 2", "https://therealdanvega.com/spring-boot-2");
-            linkRepository.save( link );
-
-            Comment comment = new Comment("This Spring Boot 2 Link is awesome", link);
-            commentRepository.save(comment);
-
-            link.addComment(comment);
-
-            Link firstLink = linkRepository.findByTitle("Getting Started with Spring Boot 2");
-            System.out.println(firstLink.getTitle());
-        };
-    }*/
 
     @Bean
     PrettyTime prettyTime(){
