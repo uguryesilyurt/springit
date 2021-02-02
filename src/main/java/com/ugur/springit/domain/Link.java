@@ -21,7 +21,6 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
-@ToString
 @Getter
 @Setter
 public class Link extends Auditable {
