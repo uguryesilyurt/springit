@@ -1,20 +1,25 @@
 package com.ugur.springit.domain;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
-@Data
-public class Vote {
+@RequiredArgsConstructor
+@Getter
+@Setter
+public class Vote extends Auditable {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
-    //private User user;
-    //private Link link;
-    private int vote;
+
+    @NonNull
+    private short direction;
+
+    @NonNull
+    @ManyToOne
+    private Link link;
+
 }
